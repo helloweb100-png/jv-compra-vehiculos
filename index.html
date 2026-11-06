@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- La clase "js" activa los estados iniciales de las animaciones solo si hay JavaScript -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <title>Vende tu carro con adeudos | JV Compra de Vehículos</title>
+  <meta name="description" content="Vende tu carro con adeudos, sin papeles o con documentos extraviados. Pago inmediato en menos de 5 minutos y mejor precio. Cotiza por WhatsApp.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#06080E">
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Open Graph / redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="JV Compra de Vehículos">
+  <meta property="og:title" content="Compramos tu vehículo, incluso con adeudos | JV Compra de Vehículos">
+  <meta property="og:description" content="Con o sin papeles, por extravío o con adeudo en agencia. Pago inmediato en menos de 5 minutos. Escríbenos por WhatsApp.">
+  <meta property="og:image" content="assets/logo-compro-vehiculo.jpeg">
+  <meta property="og:image:alt" content="Anuncio de JV Compra de Vehículos: compro vehículo con adeudos, pago inmediato en menos de 5 minutos">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compramos tu vehículo, incluso con adeudos">
+  <meta name="twitter:description" content="Pago inmediato en menos de 5 minutos. Con o sin papeles. Cotiza por WhatsApp.">
+  <meta name="twitter:image" content="assets/logo-compro-vehiculo.jpeg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/logo-compro-vehiculo.jpeg">
+
+  <!-- Tipografías: Archivo (títulos y texto) + JetBrains Mono (datos técnicos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Datos estructurados: solo información real entregada por el cliente -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JV Compra de Vehículos",
+    "description": "Compra de vehículos con pago inmediato en menos de 5 minutos. Carros y camionetas con adeudos, sin papeles, con documentos extraviados, con detalles o sin detalles.",
+    "telephone": "+523325800108",
+    "image": "assets/logo-compro-vehiculo.jpeg",
+    "logo": "assets/logo-compro-vehiculo.jpeg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+523325800108",
+      "contactType": "customer service",
+      "availableLanguage": "es"
+    },
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Compra de vehículos con adeudos" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Compra de vehículos con o sin papeles" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Compra de carros y camionetas con pago inmediato" } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Compran vehículos que todavía tienen adeudo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Compramos vehículos con adeudos, incluso si aún se deben en agencia. Escríbenos por WhatsApp y cuéntanos tu caso." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Y si no tengo papeles o los perdí?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Compramos con o sin papeles, ya sea porque no los tienes o porque se extraviaron. Dinos qué documentos tienes y revisamos tu caso." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tan rápido me pagan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "El pago es inmediato, en menos de 5 minutos." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tipo de vehículos compran?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Carros, camionetas y más. Si tu vehículo es de otro tipo, pregúntanos por WhatsApp." }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- Definiciones SVG reutilizables (vehículos, ruedas, ciudad). No se muestran. -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".42"/>
+      <stop offset=".45" stop-color="#fff" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".38"/>
+    </linearGradient>
+
+    <path id="s-sedan" pathLength="1000" d="M38 130 L34 108 Q34 96 48 94 L104 90 C120 86 138 56 172 42 C180 38 190 34 206 34 L270 34 C296 36 318 62 346 82 L410 92 Q440 96 444 112 L446 130 L393 130 A33 33 0 0 0 327 130 L151 130 A33 33 0 0 0 85 130 Z"/>
+    <path id="s-pickup" pathLength="1000" d="M30 126 L30 80 L36 74 L186 74 L192 42 Q196 34 210 34 L290 34 C310 36 326 58 342 76 L348 80 L420 86 Q446 90 448 108 L448 126 L404 126 A36 36 0 0 0 332 126 L148 126 A36 36 0 0 0 76 126 Z"/>
+    <path id="s-suv" pathLength="1000" d="M46 128 L40 100 Q38 88 50 82 L58 62 Q62 44 84 38 L120 36 L262 36 C290 36 312 56 336 80 L412 90 Q440 94 446 110 L446 128 L396 128 A34 34 0 0 0 328 128 L156 128 A34 34 0 0 0 88 128 Z"/>
+
+    <g id="b-sedan">
+      <use href="#s-sedan" class="v-shell"/>
+      <use href="#s-sedan" class="v-shine" fill="url(#g-shine)"/>
+      <path class="v-glass" d="M124 88 C138 64 156 50 178 45 L216 41 L218 88 Z"/>
+      <path class="v-glass" d="M228 41 L268 41 C290 43 306 62 328 84 L228 88 Z"/>
+      <path class="v-line" d="M222 90 L220 126 M238 100 H256 M176 100 H194"/>
+      <path class="v-lamp v-lamp--f" d="M412 99 Q430 98 440 105 L438 113 Q422 110 410 108 Z"/>
+      <path class="v-lamp v-lamp--r" d="M37 100 L50 98 L50 108 L38 109 Z"/>
+    </g>
+    <g id="b-pickup">
+      <use href="#s-pickup" class="v-shell"/>
+      <use href="#s-pickup" class="v-shine" fill="url(#g-shine)"/>
+      <path class="v-glass" d="M202 76 L203 46 Q205 40 214 40 L258 40 L258 76 Z"/>
+      <path class="v-glass" d="M266 40 L288 40 C306 42 320 60 334 76 L266 76 Z"/>
+      <path class="v-line" d="M262 78 L262 124 M200 78 L198 124 M240 90 H254 M284 90 H298 M30 94 H186 M416 112 H448"/>
+      <path class="v-lamp v-lamp--f" d="M420 92 L441 95 L441 103 L421 100 Z"/>
+      <path class="v-lamp v-lamp--r" d="M30 80 L37 80 L37 94 L30 94 Z"/>
+    </g>
+    <g id="b-suv">
+      <use href="#s-suv" class="v-shell"/>
+      <use href="#s-suv" class="v-shine" fill="url(#g-shine)"/>
+      <path class="v-glass" d="M66 80 L70 52 Q74 43 92 41 L156 39 L158 80 Z"/>
+      <path class="v-glass" d="M166 39 L262 38 C284 38 302 56 322 80 L166 80 Z"/>
+      <path class="v-line" d="M162 82 L160 126 M176 92 H194 M250 92 H268 M118 32 H264"/>
+      <path class="v-lamp v-lamp--f" d="M412 94 L436 98 L436 106 L414 102 Z"/>
+      <path class="v-lamp v-lamp--r" d="M44 88 L52 86 L54 100 L46 100 Z"/>
+    </g>
+
+    <g id="w-tire">
+      <circle class="v-tire" r="26"/>
+      <circle class="v-rim" r="17"/>
+      <circle class="v-hub" r="4.5"/>
+    </g>
+    <g id="w-spokes">
+      <path class="v-spoke" d="M0 -16V16 M-16 0H16 M-11.3 -11.3L11.3 11.3 M11.3 -11.3L-11.3 11.3"/>
+    </g>
+
+    <!-- Silueta de ciudad y ventanas -->
+    <path id="p-ciudad" d="M0 200 V110 H70 V60 H120 V90 H200 V30 H240 V100 H310 V50 H365 V120 H455 V10 H500 V80 H570 V105 H630 V40 H680 V90 H760 V25 H805 V95 H870 V55 H925 V110 H1010 V45 H1060 V85 H1130 V70 H1200 V200 Z"/>
+    <clipPath id="c-ciudad"><use href="#p-ciudad"/></clipPath>
+    <pattern id="win-a" width="14" height="18" patternUnits="userSpaceOnUse"><rect x="3" y="4" width="4" height="7" fill="#FFD400"/></pattern>
+    <pattern id="win-b" width="18" height="14" patternUnits="userSpaceOnUse"><rect x="6" y="3" width="5" height="5" fill="#ffffff"/></pattern>
+  </defs>
+</svg>
+
+<!-- ============ CARGADOR (spinner de arranque) ============ -->
+<div class="loader" id="cargador" role="status" aria-live="polite">
+  <div class="loader__panel loader__panel--a"></div>
+  <div class="loader__panel loader__panel--b"></div>
+  <div class="loader__core">
+    <div class="loader__gauge">
+      <svg viewBox="0 0 220 220" aria-hidden="true" focusable="false">
+        <circle class="lg-ticks" cx="110" cy="110" r="102"/>
+        <circle class="lg-track" cx="110" cy="110" r="88"/>
+        <circle class="lg-arc" cx="110" cy="110" r="88"/>
+        <g class="lg-needle"><line x1="110" y1="110" x2="110" y2="34"/><circle cx="110" cy="110" r="7"/></g>
+      </svg>
+      <p class="loader__count"><span id="cargadorPct">0</span><small>%</small></p>
+    </div>
+    <div class="logo-crop loader__logo">
+      <img src="assets/logo-compro-vehiculo.jpeg" alt="Logo de JV Compra de Vehículos: Compro vehículo con adeudos" width="720" height="732">
+    </div>
+    <p class="loader__msg">Encendiendo motor<span class="loader__dots" aria-hidden="true"></span></p>
+  </div>
+</div>
+
+<div class="progress" id="progreso" aria-hidden="true"><i></i></div>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<div class="page">
+
+<!-- ============ ENCABEZADO ============ -->
+<header class="site-header" id="encabezado">
+  <div class="wrap site-header__in">
+    <a class="brand" href="#inicio" aria-label="JV Compra de Vehículos, ir al inicio">
+      <span class="logo-crop brand__logo"><img src="assets/logo-compro-vehiculo.jpeg" alt="Logo JV Compra de Vehículos" width="720" height="732"></span>
+      <span class="brand__txt"><strong>JV</strong><span>Compra de Vehículos</span></span>
+    </a>
+
+    <nav class="nav" id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#situaciones">Situaciones</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#ventajas">Ventajas</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+      </ul>
+      <a class="btn btn--wa btn--sm nav__cta" href="#contacto" data-wa data-wa-msg="Hola, estoy listo para vender mi vehículo y quiero mi oferta.">
+        <span class="btn__ico" aria-hidden="true"></span><span>Quiero mi oferta</span>
+      </a>
+    </nav>
+
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" aria-labelledby="titulo-hero">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__sky"></div>
+    <div class="hero__grid-bg"></div>
+    <div class="hero__digits" data-parallax="0.18">5:00</div>
+    <canvas class="hero__canvas" id="particulas"></canvas>
+    <svg class="hero__city" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax meet" focusable="false">
+      <use href="#p-ciudad" class="city-body"/>
+      <rect class="win win--a" width="1200" height="200" clip-path="url(#c-ciudad)" fill="url(#win-a)"/>
+      <rect class="win win--b" width="1200" height="200" clip-path="url(#c-ciudad)" fill="url(#win-b)"/>
+    </svg>
+    <div class="hero__road">
+      <i class="streak streak--1"></i><i class="streak streak--2"></i><i class="streak streak--3"></i>
+      <i class="streak streak--4"></i><i class="streak streak--5"></i><i class="streak streak--6"></i>
+    </div>
+    <div class="hero__glow"></div>
+  </div>
+
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow eyebrow--live reveal"><i></i>Compra de vehículos · Pago inmediato</p>
+      <h1 id="titulo-hero" data-split>Compramos tu carro o camioneta, <em>incluso con adeudos.</em></h1>
+      <p class="lead hero__lead reveal" style="--d:.55s">Con o sin papeles, por extravío o con adeudo en agencia. Pago inmediato en menos de 5 minutos y mejoramos el precio de la competencia.</p>
+
+      <div class="hero__ctas reveal" style="--d:.7s">
+        <a class="btn btn--primary btn--lg" href="#contacto" data-wa data-wa-msg="Hola, estoy listo: quiero que me coticen mi vehículo.">
+          <span>Estoy listo, quiero mi oferta</span><i class="btn__arrow" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#como-funciona"><span>Ver cómo funciona</span></a>
+      </div>
+
+      <ul class="chips reveal" style="--d:.85s" aria-label="Lo que compramos">
+        <li><i aria-hidden="true"></i>Sin o con papeles</li>
+        <li><i aria-hidden="true"></i>Con adeudos</li>
+        <li><i aria-hidden="true"></i>Carros, camionetas y más</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual reveal reveal--scale" style="--d:.5s">
+      <!-- Panel 3D animado: ilustración del proceso (decorativa) -->
+      <div class="hud-wrap" data-tilt-root>
+        <div class="hud" aria-hidden="true">
+          <div class="hud__glow"></div>
+          <div class="hud__bar">
+            <span class="hud__dots"><i></i><i></i><i></i></span>
+            <span class="hud__title">JV · ESCÁNER DE OFERTAS</span>
+            <span class="hud__live"><i></i>EN VIVO</span>
+          </div>
+
+          <div class="hud__stage">
+            <div class="hud__floor"></div>
+            <div class="hud__veh is-active" data-nombre="CARROS">
+              <svg class="veh" viewBox="0 0 480 170" focusable="false">
+                <ellipse class="v-shadow" cx="240" cy="158" rx="205" ry="6"/>
+                <use href="#b-sedan"/>
+                <g transform="translate(118 130)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+                <g transform="translate(360 130)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+              </svg>
+            </div>
+            <div class="hud__veh" data-nombre="CAMIONETAS">
+              <svg class="veh" viewBox="0 0 480 170" focusable="false">
+                <ellipse class="v-shadow" cx="240" cy="158" rx="212" ry="6"/>
+                <use href="#b-pickup"/>
+                <g transform="translate(112 128) scale(1.07)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+                <g transform="translate(368 128) scale(1.07)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+              </svg>
+            </div>
+            <div class="hud__veh" data-nombre="Y MÁS">
+              <svg class="veh" viewBox="0 0 480 170" focusable="false">
+                <ellipse class="v-shadow" cx="240" cy="158" rx="205" ry="6"/>
+                <use href="#b-suv"/>
+                <g transform="translate(122 129)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+                <g transform="translate(362 129)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+              </svg>
+            </div>
+            <div class="hud__scan"></div>
+            <span class="hud__corner hud__corner--tl"></span><span class="hud__corner hud__corner--tr"></span>
+            <span class="hud__corner hud__corner--bl"></span><span class="hud__corner hud__corner--br"></span>
+            <span class="hud__tag" id="hudEtiqueta">CARROS</span>
+          </div>
+
+          <ul class="hud__checks">
+            <li><i></i>Con adeudos</li>
+            <li><i></i>Sin o con papeles</li>
+            <li><i></i>Por extravío</li>
+          </ul>
+
+          <div class="hud__pay">
+            <svg class="hud__ring" viewBox="0 0 64 64" focusable="false">
+              <circle class="r-track" cx="32" cy="32" r="27"/>
+              <circle class="r-arc" id="hudArco" cx="32" cy="32" r="27"/>
+            </svg>
+            <div class="hud__time">
+              <span>PAGO INMEDIATO</span>
+              <strong id="hudTiempo">5:00</strong>
+            </div>
+            <span class="hud__ok" id="hudOk">✓ LISTO</span>
+          </div>
+        </div>
+
+        <!-- Insignias flotantes en profundidad 3D -->
+        <span class="float-chip float-chip--a" aria-hidden="true"><i></i>Mejor precio</span>
+        <span class="float-chip float-chip--b" aria-hidden="true"><i></i>&lt; 5 minutos</span>
+        <span class="float-chip float-chip--c" aria-hidden="true"><i></i>Con detalles o sin detalles</span>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#situaciones" aria-label="Bajar a la siguiente sección"><span></span></a>
+</section>
+
+<!-- ============ CINTA ANIMADA ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__row marquee__row--a">
+    <div class="marquee__track">
+      <span>Pago inmediato</span><span>Con adeudos</span><span>Sin o con papeles</span><span>Por extravío</span><span>Carros</span><span>Camionetas</span><span>Mejor precio</span><span>Con detalles o sin detalles</span>
+      <span>Pago inmediato</span><span>Con adeudos</span><span>Sin o con papeles</span><span>Por extravío</span><span>Carros</span><span>Camionetas</span><span>Mejor precio</span><span>Con detalles o sin detalles</span>
+    </div>
+  </div>
+  <div class="marquee__row marquee__row--b">
+    <div class="marquee__track">
+      <span>Menos de 5 minutos</span><span>Adeudos en agencia</span><span>Compra de vehículos</span><span>WhatsApp directo</span><span>Menos de 5 minutos</span><span>Adeudos en agencia</span><span>Compra de vehículos</span><span>WhatsApp directo</span>
+      <span>Menos de 5 minutos</span><span>Adeudos en agencia</span><span>Compra de vehículos</span><span>WhatsApp directo</span><span>Menos de 5 minutos</span><span>Adeudos en agencia</span><span>Compra de vehículos</span><span>WhatsApp directo</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SITUACIONES (tarjetas apiladas) ============ -->
+<section class="situaciones section section--paper" id="situaciones" aria-labelledby="titulo-situaciones">
+  <div class="wrap situaciones__grid">
+    <div class="situaciones__intro">
+      <div class="sticky-box">
+        <p class="eyebrow reveal">Situaciones que sí resolvemos</p>
+        <h2 id="titulo-situaciones" data-split>Tu vehículo tiene un “pero”. <em>Nosotros, un “sí”.</em></h2>
+        <p class="lead reveal">Adeudos, papeles que no aparecen, golpes o fallas. Cuéntanos tu caso: aquí te explicamos cómo lo resolvemos.</p>
+        <a class="btn btn--dark reveal" href="#contacto" data-wa data-wa-msg="Hola, quiero que revisen mi caso: tengo un vehículo y quiero venderlo.">
+          <span>Quiero que revisen mi caso</span><i class="btn__arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="stack">
+      <article class="scard scard--yellow" data-scard>
+        <div class="scard__in">
+          <header class="scard__head"><span class="scard__n">01</span><span class="scard__tag">Con adeudos</span></header>
+          <svg class="scard__icon ico-lock" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <path class="ico-shackle" d="M40 54 V40 a20 20 0 0 1 40 0 V54"/>
+            <rect x="28" y="54" width="64" height="48" rx="10"/>
+            <circle cx="60" cy="76" r="5"/><path d="M60 80 V90"/>
+          </svg>
+          <h3>Aún lo debes en agencia</h3>
+          <p>Compramos vehículos con adeudos, incluso si todavía se deben en agencia. Tú nos cuentas cómo está y nosotros resolvemos.</p>
+          <a class="scard__cta" href="#contacto" data-wa data-wa-msg="Hola, mi vehículo tiene adeudo (incluso en agencia) y quiero venderlo.">Mi vehículo tiene adeudo <i class="btn__arrow" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="scard scard--ink" data-scard>
+        <div class="scard__in">
+          <header class="scard__head"><span class="scard__n">02</span><span class="scard__tag">Sin o con papeles</span></header>
+          <svg class="scard__icon ico-doc" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <path d="M34 14 H72 L92 34 V104 a6 6 0 0 1 -6 6 H34 a6 6 0 0 1 -6 -6 V20 a6 6 0 0 1 6 -6 Z"/>
+            <path d="M72 14 V34 H92"/>
+            <path class="ico-doc__line" d="M42 56 H78 M42 70 H78"/>
+            <path class="ico-check" d="M44 90 l10 10 l22 -22"/>
+          </svg>
+          <h3>Con o sin papeles, tu vehículo cuenta</h3>
+          <p>Dinos qué documentos tienes y cuáles no. Con o sin papeles, revisamos tu caso y te decimos cómo seguir.</p>
+          <a class="scard__cta" href="#contacto" data-wa data-wa-msg="Hola, no tengo todos los papeles de mi vehículo y quiero saber si lo compran.">No tengo todos mis papeles <i class="btn__arrow" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="scard scard--red" data-scard>
+        <div class="scard__in">
+          <header class="scard__head"><span class="scard__n">03</span><span class="scard__tag">Por extravío</span></header>
+          <svg class="scard__icon ico-search" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <path d="M30 14 H64 L84 34 V86 a6 6 0 0 1 -6 6 H30 a6 6 0 0 1 -6 -6 V20 a6 6 0 0 1 6 -6 Z"/>
+            <path d="M40 46 H68 M40 60 H60"/>
+            <g class="ico-lens"><circle cx="78" cy="78" r="16"/><path d="M90 90 L106 106"/></g>
+          </svg>
+          <h3>Extraviaste tus documentos</h3>
+          <p>Un extravío no tiene por qué frenar tu venta. También compramos vehículos cuyos papeles se perdieron.</p>
+          <a class="scard__cta" href="#contacto" data-wa data-wa-msg="Hola, extravié los documentos de mi vehículo y quiero venderlo.">Perdí mis documentos <i class="btn__arrow" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="scard scard--white" data-scard>
+        <div class="scard__in">
+          <header class="scard__head"><span class="scard__n">04</span><span class="scard__tag">Con detalles o sin detalles</span></header>
+          <svg class="scard__icon ico-wrench" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <path d="M84 20 a24 24 0 0 0 -30 30 L20 84 a10 10 0 0 0 16 16 L70 66 a24 24 0 0 0 30 -30 l-16 16 -14 -4 -4 -14 Z"/>
+            <path class="ico-spark" d="M96 18 V30 M90 24 H102"/>
+          </svg>
+          <h3>Con detalles o sin detalles</h3>
+          <p>Golpes, fallas o detalles de uso: resolvemos con detalles o sin detalles. Tu vehículo no tiene que estar impecable para que lo hablemos.</p>
+          <a class="scard__cta" href="#contacto" data-wa data-wa-msg="Hola, mi vehículo tiene algunos detalles y quiero saber si lo compran.">Mi vehículo tiene detalles <i class="btn__arrow" aria-hidden="true"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESCENA (imagen que se expande con el scroll) ============ -->
+<section class="escena" id="escena" aria-labelledby="titulo-escena">
+  <div class="escena__pin">
+    <div class="escena__frame">
+      <div class="escena__sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <svg class="escena__city escena__city--far" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <use href="#p-ciudad"/>
+      </svg>
+      <svg class="escena__city escena__city--near" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <use href="#p-ciudad"/>
+        <rect class="win win--a" width="1200" height="200" clip-path="url(#c-ciudad)" fill="url(#win-a)"/>
+        <rect class="win win--b" width="1200" height="200" clip-path="url(#c-ciudad)" fill="url(#win-b)"/>
+      </svg>
+
+      <div class="escena__lot" aria-hidden="true">
+        <figure class="ev ev--sedan">
+          <span class="ev__beam"></span>
+          <svg class="veh" viewBox="0 0 480 170" focusable="false">
+            <ellipse class="v-shadow" cx="240" cy="158" rx="205" ry="6"/>
+            <use href="#b-sedan"/>
+            <g transform="translate(118 130)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+            <g transform="translate(360 130)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+          </svg>
+          <figcaption>Carros</figcaption>
+        </figure>
+        <figure class="ev ev--pickup">
+          <span class="ev__beam"></span>
+          <svg class="veh" viewBox="0 0 480 170" focusable="false">
+            <ellipse class="v-shadow" cx="240" cy="158" rx="212" ry="6"/>
+            <use href="#b-pickup"/>
+            <g transform="translate(112 128) scale(1.07)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+            <g transform="translate(368 128) scale(1.07)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+          </svg>
+          <figcaption>Camionetas</figcaption>
+        </figure>
+        <figure class="ev ev--suv">
+          <span class="ev__beam"></span>
+          <svg class="veh" viewBox="0 0 480 170" focusable="false">
+            <ellipse class="v-shadow" cx="240" cy="158" rx="205" ry="6"/>
+            <use href="#b-suv"/>
+            <g transform="translate(122 129)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+            <g transform="translate(362 129)"><use href="#w-tire"/><g class="spin"><use href="#w-spokes" class="v-spokes"/></g></g>
+          </svg>
+          <figcaption>Y más</figcaption>
+        </figure>
+      </div>
+      <div class="escena__road" aria-hidden="true"><i></i></div>
+      <div class="escena__shade" aria-hidden="true"></div>
+    </div>
+    <p class="escena__hint" aria-hidden="true"><i></i>Desliza y abre la escena</p>
+  </div>
+
+  <!-- La tarjeta sube por encima de la escena fija mientras haces scroll -->
+  <div class="escena__tail">
+    <div class="escena__card">
+      <p class="eyebrow">Carros · Camionetas · Y más</p>
+      <h2 id="titulo-escena">Carros. Camionetas. <em>Etcétera.</em></h2>
+      <p class="lead">Sea cual sea tu vehículo, escríbenos. Lo importante es que salgas con tu pago y sin dolores de cabeza.</p>
+      <a class="btn btn--primary" href="#contacto" data-wa data-wa-msg="Hola, quiero vender mi vehículo. ¿Me pueden dar su oferta?">
+        <span>Quiero vender mi vehículo</span><i class="btn__arrow" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO FUNCIONA (cronómetro ligado al scroll) ============ -->
+<section class="proceso section section--ink" id="como-funciona" aria-labelledby="titulo-proceso">
+  <div class="proceso__bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow reveal">Así de simple</p>
+      <h2 id="titulo-proceso" data-split>De tu mensaje a tu pago, <em>sin vueltas.</em></h2>
+      <p class="lead reveal">Tres pasos y un cronómetro: el pago es inmediato, en menos de 5 minutos.</p>
+    </header>
+
+    <div class="proceso__grid">
+      <div class="stopwatch-wrap">
+        <div class="stopwatch" id="cronometro" role="img" aria-label="Cronómetro: pago inmediato en menos de 5 minutos">
+          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <circle class="sw-ticks" cx="100" cy="100" r="96"/>
+            <circle class="sw-track" cx="100" cy="100" r="84"/>
+            <circle class="sw-arc" id="swArco" cx="100" cy="100" r="84"/>
+            <g class="sw-hand" id="swAguja"><line x1="100" y1="100" x2="100" y2="26"/><circle cx="100" cy="100" r="6"/></g>
+          </svg>
+          <div class="stopwatch__read">
+            <span class="stopwatch__label" id="swEtiqueta">Tiempo para tu pago</span>
+            <strong id="swTiempo">5:00</strong>
+          </div>
+        </div>
+      </div>
+
+      <ol class="pasos">
+        <li class="paso" data-paso>
+          <span class="paso__n">01</span>
+          <div class="paso__body">
+            <h3>Escríbenos</h3>
+            <p>Mándanos por WhatsApp los datos de tu vehículo: marca, modelo y año, y si tiene adeudos o le faltan papeles.</p>
+            <div class="bubble" aria-hidden="true">
+              <span>Hola, quiero vender mi vehículo. Tiene adeudo y me faltan papeles.</span>
+              <i class="bubble__ticks"></i>
+            </div>
+          </div>
+        </li>
+        <li class="paso" data-paso>
+          <span class="paso__n">02</span>
+          <div class="paso__body">
+            <h3>Recibe tu oferta</h3>
+            <p>Revisamos tu caso y te compartimos una propuesta pensada para mejorar el precio de la competencia.</p>
+            <div class="offer" aria-hidden="true">
+              <span class="offer__k">Tu oferta</span>
+              <span class="offer__bars"><i></i><i></i><i></i><i></i></span>
+            </div>
+          </div>
+        </li>
+        <li class="paso" data-paso>
+          <span class="paso__n">03</span>
+          <div class="paso__body">
+            <h3>Cobra al instante</h3>
+            <p>Pago inmediato en menos de 5 minutos. Sin esperas largas y sin vueltas innecesarias.</p>
+            <div class="paid" aria-hidden="true"><i></i>Pago inmediato</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="proceso__cta reveal">
+      <a class="btn btn--primary btn--lg" href="#contacto" data-wa data-wa-msg="Hola, quiero empezar: me interesa vender mi vehículo y recibir mi oferta.">
+        <span>Empecemos, quiero mi oferta</span><i class="btn__arrow" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VENTAJAS (bento) ============ -->
+<section class="ventajas section section--paper" id="ventajas" aria-labelledby="titulo-ventajas">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow reveal">Por qué elegirnos</p>
+      <h2 id="titulo-ventajas" data-split>Lo que te llevas <em>al vender con nosotros.</em></h2>
+    </header>
+
+    <div class="bento">
+      <article class="tile tile--yellow tile--xl reveal" data-spot>
+        <p class="tile__k">Pago inmediato</p>
+        <p class="tile__big"><span aria-hidden="true">&lt;</span>5<small>min</small></p>
+        <h3>En menos de 5 minutos</h3>
+        <p>Cuando cerramos, cobras: pago inmediato, sin esperas largas.</p>
+        <svg class="tile__clock" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="44"/><path class="tc-hand" d="M50 50 V16"/><path class="tc-hand tc-hand--s" d="M50 50 L72 62"/></svg>
+      </article>
+
+      <article class="tile tile--ink tile--wide reveal" data-spot>
+        <p class="tile__k">Mejor precio</p>
+        <h3>Mejoramos el precio de la competencia</h3>
+        <p>Tu vehículo merece una oferta que sí valga la pena.</p>
+        <svg class="tile__chart" viewBox="0 0 240 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path class="ch-them" d="M0 62 L40 58 L80 64 L120 56 L160 60 L200 54 L240 58"/>
+          <path class="ch-us" d="M0 74 L40 60 L80 56 L120 40 L160 32 L200 20 L240 8"/>
+          <circle class="ch-dot" cx="240" cy="8" r="4"/>
+        </svg>
+        <span class="tile__legend"><i class="lg-us"></i>Nosotros <i class="lg-them"></i>Competencia</span>
+      </article>
+
+      <article class="tile tile--glass reveal" data-spot>
+        <p class="tile__k">Con adeudos</p>
+        <h3>Incluso si aún se debe en agencia</h3>
+        <p>El adeudo no es un obstáculo para venderlo.</p>
+      </article>
+
+      <article class="tile tile--glass reveal" data-spot>
+        <p class="tile__k">Sin o con papeles</p>
+        <h3>Y también si se extraviaron</h3>
+        <p>Cuéntanos qué te falta y lo revisamos juntos.</p>
+      </article>
+
+      <article class="tile tile--red reveal" data-spot>
+        <p class="tile__k">Carros, camionetas y más</p>
+        <h3>Dinos cuál es el tuyo</h3>
+        <p>¿No estás seguro de si lo compramos? Escríbenos y pregunta.</p>
+      </article>
+
+      <article class="tile tile--outline reveal" data-spot>
+        <p class="tile__k">Con detalles o sin detalles</p>
+        <h3>No tiene que estar impecable</h3>
+        <p>Resolvemos con detalles o sin detalles.</p>
+      </article>
+
+      <article class="tile tile--wa reveal" data-spot>
+        <p class="tile__k">Todo por WhatsApp</p>
+        <h3>Escribe, cuéntanos de tu vehículo y listo.</h3>
+        <a class="btn btn--dark" href="#contacto" data-wa data-wa-msg="Hola, vi su página y quiero cotizar mi vehículo.">
+          <span>Abrir WhatsApp ahora</span><i class="btn__arrow" aria-hidden="true"></i>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARATIVA ============ -->
+<section class="compara section section--ink2" id="compara" aria-labelledby="titulo-compara">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow reveal">Compara</p>
+      <h2 id="titulo-compara" data-split>Vender por tu cuenta <em>vs.</em> vender con nosotros</h2>
+    </header>
+
+    <div class="compara__grid">
+      <div class="cmp cmp--no reveal">
+        <h3>Por tu cuenta</h3>
+        <ul>
+          <li>Publicar y esperar a que alguien se interese</li>
+          <li>Responder mensajes y regateos</li>
+          <li>Resolver adeudos y papeles antes de vender</li>
+          <li>Esperar a que te paguen</li>
+        </ul>
+      </div>
+      <div class="cmp cmp--si reveal">
+        <h3>Con JV Compra de Vehículos</h3>
+        <ul>
+          <li>Un mensaje por WhatsApp y listo</li>
+          <li>Compramos con adeudos, con o sin papeles</li>
+          <li>Mejoramos el precio de la competencia</li>
+          <li>Pago inmediato en menos de 5 minutos</li>
+        </ul>
+        <a class="btn btn--primary" href="#contacto" data-wa data-wa-msg="Hola, prefiero la vía rápida: quiero vender mi vehículo con ustedes.">
+          <span>Prefiero la vía rápida</span><i class="btn__arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREGUNTAS FRECUENTES ============ -->
+<section class="faq section section--paper" id="preguntas" aria-labelledby="titulo-faq">
+  <div class="wrap faq__grid">
+    <header class="faq__head">
+      <p class="eyebrow reveal">Preguntas frecuentes</p>
+      <h2 id="titulo-faq" data-split>Lo que casi todos <em>preguntan primero.</em></h2>
+      <p class="lead reveal">¿No ves tu duda? Pregúntanos directo, por WhatsApp.</p>
+      <a class="btn btn--dark reveal" href="#contacto" data-wa data-wa-msg="Hola, tengo una duda antes de vender mi vehículo.">
+        <span>Tengo otra duda, clic aquí</span><i class="btn__arrow" aria-hidden="true"></i>
+      </a>
+    </header>
+
+    <div class="faq__list">
+      <details class="qa reveal" name="faq" open>
+        <summary>¿Compran vehículos que todavía tienen adeudo?</summary>
+        <div class="qa__a"><p>Sí. Compramos vehículos con adeudos, incluso si aún se deben en agencia. Escríbenos por WhatsApp y cuéntanos tu caso.</p></div>
+      </details>
+      <details class="qa reveal" name="faq">
+        <summary>¿Y si no tengo papeles o los perdí?</summary>
+        <div class="qa__a"><p>Compramos con o sin papeles, ya sea porque no los tienes o porque se extraviaron. Dinos qué documentos tienes y revisamos tu caso.</p></div>
+      </details>
+      <details class="qa reveal" name="faq">
+        <summary>¿Qué tan rápido me pagan?</summary>
+        <div class="qa__a"><p>El pago es inmediato, en menos de 5 minutos.</p></div>
+      </details>
+      <details class="qa reveal" name="faq">
+        <summary>¿Qué tipo de vehículos compran?</summary>
+        <div class="qa__a"><p>Carros, camionetas y más. Si tu vehículo es de otro tipo, pregúntanos por WhatsApp.</p></div>
+      </details>
+      <details class="qa reveal" name="faq">
+        <summary>¿Compran vehículos con detalles o fallas?</summary>
+        <div class="qa__a"><p>Sí, resolvemos con detalles o sin detalles. Cuéntanos cómo está el tuyo.</p></div>
+      </details>
+      <details class="qa reveal" name="faq">
+        <summary>¿Cómo sé cuánto me pagarán?</summary>
+        <div class="qa__a"><p>Mándanos los datos de tu vehículo por WhatsApp y te compartimos nuestra propuesta. Nuestro objetivo es mejorar el precio de la competencia.</p></div>
+      </details>
+      <details class="qa reveal" name="faq">
+        <summary>¿Dónde los encuentro?</summary>
+        <div class="qa__a"><p>Atendemos por WhatsApp al <span data-wa-display>33 2580 0108</span> y también nos puedes ubicar en Facebook Marketplace como «Jv».</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="contacto section section--ink" id="contacto" aria-labelledby="titulo-contacto">
+  <div class="contacto__bg" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap contacto__grid">
+    <div class="contacto__copy">
+      <p class="eyebrow reveal">Último paso</p>
+      <h2 id="titulo-contacto" data-split>Cuéntanos de tu vehículo. <em>Nosotros hacemos el resto.</em></h2>
+      <p class="lead reveal">Llena estos datos y abrimos WhatsApp con tu mensaje listo. Tú solo lo envías.</p>
+
+      <form class="form reveal" id="formulario" novalidate>
+        <div class="field">
+          <label for="f-nombre">Tu nombre</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Juan Pérez" required>
+        </div>
+        <div class="field">
+          <label for="f-vehiculo">Tu vehículo</label>
+          <input id="f-vehiculo" name="vehiculo" type="text" placeholder="Marca, modelo y año" required>
+        </div>
+        <div class="field">
+          <label for="f-situacion">¿Cómo está tu situación?</label>
+          <select id="f-situacion" name="situacion">
+            <option value="Sin adeudos ni problemas con papeles">Sin adeudos ni problemas</option>
+            <option value="Con adeudos">Tiene adeudos</option>
+            <option value="Con adeudo en agencia">Aún lo debo en agencia</option>
+            <option value="Sin papeles">No tengo papeles</option>
+            <option value="Papeles extraviados">Extravié los documentos</option>
+            <option value="Con detalles (golpes o fallas)">Tiene detalles (golpes o fallas)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-detalles">Algo más que quieras contarnos <span>(opcional)</span></label>
+          <textarea id="f-detalles" name="detalles" rows="3" placeholder="Kilometraje, estado general, lo que creas importante…"></textarea>
+        </div>
+        <button class="btn btn--primary btn--lg btn--block" type="submit" data-wa-submit>
+          <span>Quiero mi oferta por WhatsApp</span><i class="btn__arrow" aria-hidden="true"></i>
+        </button>
+        <p class="form__msg" id="formMsg" role="alert" hidden></p>
+        <p class="form__note">Se abrirá WhatsApp con tu mensaje. El precio y las condiciones se confirman por ahí, según tu vehículo.</p>
+      </form>
+
+      <ul class="contact-list">
+        <li><span>WhatsApp</span><a href="#contacto" data-wa data-wa-msg="Hola, quiero cotizar mi vehículo." data-wa-display-link><span data-wa-display>33 2580 0108</span></a></li>
+        <li><span>Facebook Marketplace</span><strong>Jv</strong></li>
+      </ul>
+    </div>
+
+    <div class="contacto__visual">
+      <div class="flyer-wrap" data-tilt-root>
+        <figure class="flyer">
+          <img src="assets/logo-compro-vehiculo.jpeg" alt="Anuncio de JV Compra de Vehículos: compro vehículo con adeudos, sin o con papeles, pago inmediato en menos de 5 minutos, llamar al WhatsApp 3325800108" width="720" height="732" loading="lazy">
+          <span class="flyer__shine" aria-hidden="true"></span>
+        </figure>
+        <span class="flyer-orbit flyer-orbit--a" aria-hidden="true"></span>
+        <span class="flyer-orbit flyer-orbit--b" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIE ============ -->
+<footer class="site-footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <div class="logo-crop footer__logo"><img src="assets/logo-compro-vehiculo.jpeg" alt="Logo de JV Compra de Vehículos" width="720" height="732" loading="lazy"></div>
+      <p>JV Compra de Vehículos: compramos carros y camionetas con adeudos, con o sin papeles. Pago inmediato en menos de 5 minutos.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Pie de página">
+      <h2>Explorar</h2>
+      <ul>
+        <li><a href="#situaciones">Situaciones</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#ventajas">Ventajas</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="footer__contact">
+      <h2>Escríbenos</h2>
+      <p><a href="#contacto" data-wa data-wa-msg="Hola, quiero cotizar mi vehículo.">WhatsApp: <span data-wa-display>33 2580 0108</span></a></p>
+      <p>Facebook Marketplace: <strong>Jv</strong></p>
+      <a class="btn btn--primary btn--sm" href="#contacto" data-wa data-wa-msg="Hola, quiero vender mi vehículo. ¿Me pueden dar su oferta?"><span>Quiero vender mi vehículo</span></a>
+    </div>
+  </div>
+  <div class="wrap footer__legal">
+    <p>© 2026 JV Compra de Vehículos. Todos los derechos reservados.</p>
+    <a href="#inicio" class="footer__top">Volver arriba ↑</a>
+  </div>
+</footer>
+
+</div><!-- /.page -->
+
+<!-- Botón flotante de WhatsApp -->
+<a class="wa-float" href="#contacto" data-wa data-wa-msg="Hola, quiero vender mi vehículo. ¿Me pueden dar su oferta?" aria-label="Escribir por WhatsApp para vender mi vehículo">
+  <span class="wa-float__pulse" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span class="wa-float__label">¿Vendemos tu vehículo?</span>
+</a>
+
+<!-- anime.js 3.2.2 (cdnjs). El sitio funciona completo aunque la CDN falle. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js" defer></script>
+</body>
+</html>
